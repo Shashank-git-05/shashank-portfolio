@@ -1,0 +1,257 @@
+/* --- Global Styles & Colors --- */
+:root {
+    --primary-color: #0077B6; /* LinkedIn Blue / Professional Accent */
+    --secondary-color: #48CAE4; /* Light Blue for contrast */
+    --text-color: #333;
+    --bg-color: #F8F9FA; /* Light Grey background for content blocks */
+    --card-bg: rgba(255, 255, 255, 0.95); /* Slightly transparent white for content */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    /* 1. Nice Background Picture */
+    background-image: url('your-background-image.jpg'); /* **IMPORTANT: Replace with your image file path** */
+    background-size: cover;
+    background-attachment: fixed; /* For the 'nice scrolling' fixed background effect */
+    background-position: center;
+}
+
+/* --- Header & Hero Section --- */
+header {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: var(--secondary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.hero-content {
+    padding-top: 50px;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- Main Content Cards --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section.card {
+    background-color: var(--card-bg);
+    margin: 40px 0;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px); /* Soft blur effect on the background */
+}
+
+section h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+section h2 i {
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+/* --- Skills Grid --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.skill-category h4 {
+    color: var(--primary-color);
+    border-bottom: 1px dashed var(--secondary-color);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li::before {
+    content: '•';
+    color: var(--secondary-color);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* --- Project and Timeline Styles --- */
+.project-item, .timeline-item {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 15px;
+    margin-bottom: 25px;
+}
+
+.project-item h3, .timeline-item h3 {
+    margin-top: 0;
+    color: var(--text-color);
+    font-size: 1.4em;
+}
+
+.project-item p, .timeline-item p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.timeline-item .details {
+    font-style: italic;
+    color: #666;
+}
+
+/* --- Achievements Grid --- */
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.grid-2-col h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.grid-2-col i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.grid-2-col ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.grid-2-col li {
+    margin-bottom: 10px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* --- Media Query for Responsiveness --- */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        text-align: left;
+        padding: 5px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-info a {
+        margin: 5px 0;
+    }
+    
+    .grid-2-col {
+        grid-template-columns: 1fr;
+    }
+}
